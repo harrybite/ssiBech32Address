@@ -1,4 +1,4 @@
-package main
+package ssibech32address
 
 import (
 	"fmt"
