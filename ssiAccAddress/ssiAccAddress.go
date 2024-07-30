@@ -61,6 +61,7 @@ func VerifyDidFormat(did string) (bool, error) {
 	// if err != nil {
 	// 	return false, err
 	// }
+	//
 
 	return true, nil
 }
