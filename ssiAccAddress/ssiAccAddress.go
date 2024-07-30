@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/btcsuite/btcutil/bech32"
-	// "github.com/cosmos/cosmos-sdk/types/bech32"
+	// "github.com/btcsuite/btcutil/bech32"
+	"github.com/cosmos/cosmos-sdk/types/bech32"
 	"github.com/harrybite/ssiBech32Address/types"
 )
 
@@ -52,15 +52,15 @@ func VerifyDidFormat(did string) (bool, error) {
 		return false, Dataerr
 	}
 
-	// _, _, err := bech32.DecodeAndConvert(types.AccAddprifix + data)
-	// if err != nil {
-	// 	return false, err
-	// }
-
-	_, _, err := bech32.Decode(types.AccAddprifix + data)
+	_, _, err := bech32.DecodeAndConvert(types.AccAddprifix + data)
 	if err != nil {
 		return false, err
 	}
+
+	// _, _, err := bech32.Decode(types.AccAddprifix + data)
+	// if err != nil {
+	// 	return false, err
+	// }
 
 	return true, nil
 }
